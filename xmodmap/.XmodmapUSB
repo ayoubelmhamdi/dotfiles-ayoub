@@ -1,0 +1,81 @@
+!change my keybrowd
+! 	change z
+
+!keycode 25 =  x  b c d e f g
+! 	     "" shift N
+
+!xmodmap -e "keycode  25 = a b c d e f g h"
+
+
+
+
+!	    = o shift	    NoSymbol  L altG       altG+shift 
+keycode  10 = 1 ampersand   NoSymbol  1 NoSymbol    exclam	  onesuperior
+keycode  11 = 2 eacute      NoSymbol  2 asciitilde  at            asciitilde
+keycode  12 = 3 quotedbl    NoSymbol  3 numbersign  NoSymbol      numbersign
+keycode  13 = 4 apostrophe  NoSymbol  4 braceleft   dollar        braceleft
+keycode  14 = 5 parenleft   NoSymbol  5 bracketleft percent       bracketleft
+keycode  15 = 6 minus       NoSymbol  6 bar         NoSymbol      bar
+keycode  16 = 7 egrave      NoSymbol  7 grave       ampersand     grave
+keycode  17 = 8 underscore  NoSymbol  8 backslash   asterisk      backslash
+keycode  18 = 9 ccedilla    NoSymbol  9 asciicircum parenleft     asciicircum
+keycode  19 = 0 agrave      NoSymbol  0 at          parenright        at
+
+
+!	    = o          shift	      NoSymbol   L       altG           altG+shift     XXXXXX
+keycode  20 = degree	parenright    parenright degree  bracketright   underscore      bracketright
+keycode  21 = plus 	equal         equal      plus    braceright     NoSymbol        braceright
+
+
+
+
+
+!	    = o          shift	      NoSymbol   L            altG        altG+shift     XXXXXX
+keycode  34 = NoSymbol   asciicircum  NoSymbol   asciicircum  NoSymbol    NoSymbol       dead_diaeresis
+keycode  35 =sterling    dollar       NoSymbol   dollar       currency    currency       currency
+
+
+
+
+
+!	    = o shift  NoSymbol  L altG       altG+shift    xxxx
+keycode  46 = l L      l         L NoSymbol   slash         lstroke
+keycode  47 = m M      m         M NoSymbol   colon         mu
+
+
+!	    = o          shift	    NoSymbol   L          altG       altG+shift     
+keycode  48 = percent    ugrave     NoSymbol   ugrave    NoSymbol   NoSymbol           
+keycode  51 = mu         asterisk   NoSymbol   asterisk  NoSymbol   bar            
+keycode  58 = comma	 question   NoSymbol   question	 NoSymbol   NoSymbol 
+keycode  59 = semicolon	 period	    NoSymbol   period	 NoSymbol   NoSymbol 
+keycode  60 = colon	 slash	    NoSymbol   slash	 NoSymbol   NoSymbol 
+keycode  61 = period     exclam	    NoSymbol   section	 NoSymbol   NoSymbol 
+
+
+
+! for num_lock
+keycode  79 = 7 7 7 7  
+keycode  80 = 8 8 8 8  
+keycode  81 = 9 9 9 9  
+
+keycode  83 = 4 4 4 4  
+keycode  84 = 5 5 5 5  
+keycode  85 = 6 6 6 6  
+   
+keycode  87 = 1 1 1 1   
+keycode  88 = 2 2 2 2  
+keycode  89 = 3 3 3 3  
+keycode  90 = 0 0 0 0  
+keycode  91 = period period period period
+
+
+
+
+
+
+
+
+
+
+
+

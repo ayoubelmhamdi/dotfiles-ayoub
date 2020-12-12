@@ -1,0 +1,20 @@
+#!/bin/bash
+
+
+#dependencie 
+#	app key remaping with 8 option for any key
+#	pacman -S xorg-xmodmap  
+#	app to know my code for my btn
+#	pacman -S xorg-xev
+# 	to know key maping you should be run
+#  xev | sed -n 's/.*keycode *\([0-9]\+\)[^,]*, \([^)]\+\)).*$/keycode \1, keysym \2/p'
+#  add this in vide case "NoSymbol"
+
+#testing by btn z
+#			= ""	shift	NoSymbol   NoSymbol  altG      	altG+shift 
+xmodmap -e "keycode  25 = s Z NoSymbol NoSymbol quotedbli f"
+#xmodmap -e "keycode  25 = a  	b 	NoSymbol   NoSymbol  e		f"
+#xmodmap -e "keycode  25 = a b c d e f g h"
+
+
+
