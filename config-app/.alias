@@ -1,0 +1,12 @@
+#!/bin/bash
+
+alias  mk='f(){ clear ; sudo mkdir "$1"; ls -al ; }; f'
+alias  rr='f(){ clear ; sudo rm -r "$1"; ls -al ; }; f'
+alias ddd="du -ah --max-depth 1"
+alias   i="sudo pacman -S"
+alias  iy="sudo pacman -Sy"
+alias iyy="sudo pacman -Syy"
+alias   p="sudo chown t:t "
+
+
+alias  ls="LC_COLLATE=C ls -h --group-directories-first -all --color=auto"
