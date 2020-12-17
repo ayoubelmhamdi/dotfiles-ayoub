@@ -9,4 +9,8 @@ alias iyy="sudo pacman -Syy"
 alias   p="sudo chown t:t "
 
 
-alias  ls="LC_COLLATE=C ls -h --group-directories-first -all --color=auto"
+#alias  ls="clear;LC_COLLATE=C ls -h --group-directories-first -all --color=auto"
+alias  ls="clear;ls --group-directories-first --color=auto"
+alias  lA='ls -A'
+alias  la='ls -a'
+
