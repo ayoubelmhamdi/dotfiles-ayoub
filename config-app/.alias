@@ -4,51 +4,154 @@
 #		alias file		+
 #----------------------------------------
 
-alias  mk='f(){ clear ; sudo mkdir "$1"; ls -al ; }; f'
-alias  rr='f(){ clear ; sudo rm -r "$1"; ls -al ; }; f'
+alias mk='f(){ clear ; sudo mkdir -p "$1"; la; }; f'
+alias rr='f(){ clear ; sudo rm -r "$1"; la; }; f'
 alias ddd="du -ah --max-depth 1"
-alias   i="sudo pacman -S"
-alias  iy="sudo pacman -Sy"
-alias iyy="sudo pacman -Syy"
-alias   p="sudo chown t:t "
+alias p="sudo chown t:t "
+
+#++++++++++++++++++++++++++++++++++++++++
+#		pacman & yay		+
+#++++++++++++++++++++++++++++++++++++++++
+
+alias i="sudo pacman -S --noconfirm"		#
+alias iy="sudo pacman -Sy --noconfirm"		#
+alias iyy="sudo pacman -Syy --noconfirm"	#
+alias iyyu='sudo pacman -Syyu'			# update only standard pkgs
+alias yua="yay -Sua --noconfirm --noconfirm"	# update only AUR pkgs
+alias yyu="yay -Syu --noconfirm"             	# update standard pkgs and AUR pkgs
+
+alias unlock="sudo rm /var/lib/pacman/db.lck"    # remove pacman lock
+alias cleanup='sudo pacman -Rns $(pacman -Qtdq)' # remove orphaned packages
+
 
 #++++++++++++++++++++++++++++++++++++++++
 #		ls			+
 #++++++++++++++++++++++++++++++++++++++++
-alias  ls="clear;sudo ls --group-directories-first --color=auto"
-alias  la='ls -A'
-alias  ll='ls -oh'
+alias ls='clear;sudo exa  --color=always --group-directories-first' # my preferred listing
+alias la='exa -A --color=always --group-directories-first'  # all files and dirs
+alias ll='exa -oh --color=always --group-directories-first'  # long format
+alias lt='exa -aT --color=always --group-directories-first' # tree listing
+alias l.='exa -a | egrep "^\."'
 
-#++++++++++++++++++++++++++++++++++++++++
-#		cd my phone		+
-#++++++++++++++++++++++++++++++++++++++++
-alias storage='cd /storage/sdcard0/Download/sc'
 
 #++++++++++++++++++++++++++++++++++++++++
 #		other			+
 #++++++++++++++++++++++++++++++++++++++++
 alias tar='tar -zxvf'
 alias sha='shasum -a 256'
-alias cp='cp -iv'
-alias mv='mv -iv'
-alias mkd='mkdir -pv'
-alias yt='youtube-dl --add-metadata-i'
-alias yta='yt -x -f bestaudio/best'
 alias shut='sudo shutdown -h now'
 
 
 #++++++++++++++++++++++++++++++++++++++++
 #		git			+
 #++++++++++++++++++++++++++++++++++++++++
+
+alias gu='git add -u'
 alias ga='git add .'
-alias gs='git status'
-alias gl='git log'
-alias gc='git commit -m'
 alias gb='git branche'
 alias go='git checkout'
 alias gcl='git clone'
+alias gc='git commit -m'
+
+
+
+alias gs='git status'
+alias gl='git log'
 alias ginit='git init'
 alias gremote='git remote add origin'
+
+
+#	style 2
+alias addup='git add -u'
+alias addall='git add .'
+alias branch='git branch'
+alias checkout='git checkout'
+alias clone='git clone'
+alias commit='git commit -m'
+alias fetch='git fetch'
+alias pull='git pull origin'
+alias push='git push origin'
+alias status='git status'
+
+
+
+alias tag='git tag'
+alias newtag='git tag -a'
+
+# bare git repo alias for dotfiles
+alias aliasmyconfig="/usr/bin/git --git-dir=$HOME/dotfiles --work-tree=$HOME"
+
+#++++++++++++++++++++++++++++++++++++++++
+#		cd			+
+#++++++++++++++++++++++++++++++++++++++++
+# navigation
+alias ..='cd ..' 
+alias ...='cd ../..'
+alias .3='cd ../../..'
+alias .4='cd ../../../..'
+alias .5='cd ../../../../..'
+alias storage='cd /storage/sdcard0/Download/sc'
+
+#++++++++++++++++++++++++++++++++++++++++
+#	pacman mirror			+
+#++++++++++++++++++++++++++++++++++++++++
+
+# get fastest mirrors
+alias mirror="sudo reflector -f 30 -l 30 --number 10 --verbose --save /etc/pacman.d/mirrorlist"
+alias mirrord="sudo reflector --latest 50 --number 20 --sort delay --save /etc/pacman.d/mirrorlist"
+alias mirrors="sudo reflector --latest 50 --number 20 --sort score --save /etc/pacman.d/mirrorlist"
+alias mirrora="sudo reflector --latest 50 --number 20 --sort age --save /etc/pacman.d/mirrorlist"
+#++++++++++++++++++++++++++++++++++++++++
+#		grep color		+
+#++++++++++++++++++++++++++++++++++++++++
+# Colorize grep output (good for log files)
+alias grep='grep --color=auto'
+alias egrep='egrep --color=auto'
+alias fgrep='fgrep --color=auto'
+
+#++++++++++++++++++++++++++++++++++++++++
+#	   confirme cp/mv/rm		+
+#++++++++++++++++++++++++++++++++++++++++
+
+alias cp="cp -iv"
+alias mv='mv -iv'
+alias rm='rm -iv'
+
+#++++++++++++++++++++++++++++++++++++++++
+#		size files		+
+#++++++++++++++++++++++++++++++++++++++++
+
+alias df='df -h'                          # human-readable sizes
+alias free='free -m'                      # show sizes in MB
+
+#++++++++++++++++++++++++++++++++++++++++
+#		CPU & RAM		+
+#++++++++++++++++++++++++++++++++++++++++
+## get top process eating memory
+alias psmem='ps auxf | sort -nr -k 4'
+alias psmem10='ps auxf | sort -nr -k 4 | head -10'
+
+## get top process eating cpu ##
+alias pscpu='ps auxf | sort -nr -k 3'
+alias pscpu10='ps auxf | sort -nr -k 3 | head -10'
+#++++++++++++++++++++++++++++++++++++++++
+#		 youtube-dl		+
+#++++++++++++++++++++++++++++++++++++++++
+
+alias yt='youtube-dl --add-metadata-i'
+alias ytv="yt -f bestvideo+bestaudio "
+alias yta='yt -x -f bestaudio/best'
+alias yta-aac="youtube-dl --extract-audio --audio-format aac "
+alias yta-m4a="youtube-dl --extract-audio --audio-format m4a "
+alias yta-mp3="youtube-dl --extract-audio --audio-format mp3 "
+
+#++++++++++++++++++++++++++++++++++++++++
+#i	 switch between shells		+
+#++++++++++++++++++++++++++++++++++++++++
+
+alias tobash="sudo chsh $USER -s /bin/bash && echo 'Now log out.'"
+alias tozsh="sudo chsh $USER -s /bin/zsh && echo 'Now log out.'"
+alias tofish="sudo chsh $USER -s /bin/fish && echo 'Now log out.'"
 
 #++++++++++++++++++++++++++++++++++++++++
 #	    ARCHIVE EXTRACTION		+
@@ -78,120 +181,4 @@ ex (){
   fi
 }
 
-### ALIASES ###
-
-#++++++++++++++++++++++++++++++++++++++++
-#					+
-#++++++++++++++++++++++++++++++++++++++++
-# navigation
-alias ..='cd ..' 
-alias ...='cd ../..'
-alias .3='cd ../../..'
-alias .4='cd ../../../..'
-alias .5='cd ../../../../..'
-
-# pacman and yay
-alias pacsyu='sudo pacman -Syyu'                 # update only standard pkgs
-alias yaysua="yay -Sua --noconfirm"              # update only AUR pkgs
-alias yaysyu="yay -Syu --noconfirm"              # update standard pkgs and AUR pkgs
-alias unlock="sudo rm /var/lib/pacman/db.lck"    # remove pacman lock
-alias cleanup='sudo pacman -Rns $(pacman -Qtdq)' # remove orphaned packages
-
-#++++++++++++++++++++++++++++++++++++++++
-#	pacman mirror			+
-#++++++++++++++++++++++++++++++++++++++++
-# get fastest mirrors
-alias mirror="sudo reflector -f 30 -l 30 --number 10 --verbose --save /etc/pacman.d/mirrorlist"
-alias mirrord="sudo reflector --latest 50 --number 20 --sort delay --save /etc/pacman.d/mirrorlist"
-alias mirrors="sudo reflector --latest 50 --number 20 --sort score --save /etc/pacman.d/mirrorlist"
-alias mirrora="sudo reflector --latest 50 --number 20 --sort age --save /etc/pacman.d/mirrorlist"
-
-#++++++++++++++++++++++++++++++++++++++++
-#		ls to exa		+
-#++++++++++++++++++++++++++++++++++++++++
-
-alias ls='exa -al --color=always --group-directories-first' # my preferred listing
-alias la='exa -a --color=always --group-directories-first'  # all files and dirs
-alias ll='exa -l --color=always --group-directories-first'  # long format
-alias lt='exa -aT --color=always --group-directories-first' # tree listing
-alias l.='exa -a | egrep "^\."'
-
-#++++++++++++++++++++++++++++++++++++++++
-#		grep color		+
-#++++++++++++++++++++++++++++++++++++++++
-# Colorize grep output (good for log files)
-alias grep='grep --color=auto'
-alias egrep='egrep --color=auto'
-alias fgrep='fgrep --color=auto'
-
-#++++++++++++++++++++++++++++++++++++++++
-#	   confirme cp/mv/rm		+
-#++++++++++++++++++++++++++++++++++++++++
-
-alias cp="cp -i"
-alias mv='mv -i'
-alias rm='rm -i'
-
-#++++++++++++++++++++++++++++++++++++++++
-#		size files		+
-#++++++++++++++++++++++++++++++++++++++++
-
-alias df='df -h'                          # human-readable sizes
-alias free='free -m'                      # show sizes in MB
-
-#++++++++++++++++++++++++++++++++++++++++
-#		CPU & RAM		+
-#++++++++++++++++++++++++++++++++++++++++
-## get top process eating memory
-alias psmem='ps auxf | sort -nr -k 4'
-alias psmem10='ps auxf | sort -nr -k 4 | head -10'
-
-## get top process eating cpu ##
-alias pscpu='ps auxf | sort -nr -k 3'
-alias pscpu10='ps auxf | sort -nr -k 3 | head -10'
-
-#++++++++++++++++++++++++++++++++++++++++
-#		git			+
-#++++++++++++++++++++++++++++++++++++++++
- 
-alias addup='git add -u'
-alias addall='git add .'
-alias branch='git branch'
-alias checkout='git checkout'
-alias clone='git clone'
-alias commit='git commit -m'
-alias fetch='git fetch'
-alias pull='git pull origin'
-alias push='git push origin'
-alias status='git status'
-alias tag='git tag'
-alias newtag='git tag -a'
-
-# bare git repo alias for dotfiles
-alias aliasmyconfig="/usr/bin/git --git-dir=$HOME/dotfiles --work-tree=$HOME"
-
-#++++++++++++++++++++++++++++++++++++++++
-#		 youtube-dl		+
-#++++++++++++++++++++++++++++++++++++++++
-
-alias yta-aac="youtube-dl --extract-audio --audio-format aac "
-alias yta-best="youtube-dl --extract-audio --audio-format best "
-alias yta-flac="youtube-dl --extract-audio --audio-format flac "
-alias yta-m4a="youtube-dl --extract-audio --audio-format m4a "
-alias yta-mp3="youtube-dl --extract-audio --audio-format mp3 "
-alias yta-opus="youtube-dl --extract-audio --audio-format opus "
-alias yta-vorbis="youtube-dl --extract-audio --audio-format vorbis "
-alias yta-wav="youtube-dl --extract-audio --audio-format wav "
-alias ytv-best="youtube-dl -f bestvideo+bestaudio "
-
-#++++++++++++++++++++++++++++++++++++++++
-#i	 switch between shells		+
-#++++++++++++++++++++++++++++++++++++++++
-
-alias tobash="sudo chsh $USER -s /bin/bash && echo 'Now log out.'"
-alias tozsh="sudo chsh $USER -s /bin/zsh && echo 'Now log out.'"
-alias tofish="sudo chsh $USER -s /bin/fish && echo 'Now log out.'"
-
-la
-pwd
 
