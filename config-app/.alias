@@ -9,8 +9,30 @@ alias iyy="sudo pacman -Syy"
 alias   p="sudo chown t:t "
 
 
-#alias  ls="clear;LC_COLLATE=C ls -h --group-directories-first -all --color=auto"
-alias  ls="clear;ls --group-directories-first --color=auto"
-alias  lA='ls -A'
-alias  la='ls -a'
+alias  ls="clear;sudo ls --group-directories-first --color=auto"
+alias  la='ls -A'
+alias  ll='ls -oh'
+
+alias storage='cd /storage/sdcard0/Download/sc'
+
+alias tar='tar -zxvf'
+alias sha='shasum -a 256'
+alias cp='cp -iv'
+alias mv='mv -iv'
+alias mkd='mkdir -pv'
+alias yt='youtube-dl --add-metadata-i'
+alias yta='yt -x -f bestaudio/best'
+alias shut='sudo shutdown -h now'
+
+
+alias ga='git add .'
+alias gs='git status'
+alias gl='git log'
+alias gc='git commit -m'
+alias gb='git branche'
+alias go='git checkout'
+alias gcl='git clone'
+alias ginit='git init'
+alias gremote='git remote add origin'
+
 
