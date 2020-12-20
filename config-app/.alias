@@ -13,19 +13,19 @@ alias iyy="sudo pacman -Syy"
 alias   p="sudo chown t:t "
 
 #++++++++++++++++++++++++++++++++++++++++
-#					+
+#		ls			+
 #++++++++++++++++++++++++++++++++++++++++
 alias  ls="clear;sudo ls --group-directories-first --color=auto"
 alias  la='ls -A'
 alias  ll='ls -oh'
 
 #++++++++++++++++++++++++++++++++++++++++
-#					+
+#		cd my phone		+
 #++++++++++++++++++++++++++++++++++++++++
 alias storage='cd /storage/sdcard0/Download/sc'
 
 #++++++++++++++++++++++++++++++++++++++++
-#					+
+#		other			+
 #++++++++++++++++++++++++++++++++++++++++
 alias tar='tar -zxvf'
 alias sha='shasum -a 256'
@@ -38,7 +38,7 @@ alias shut='sudo shutdown -h now'
 
 
 #++++++++++++++++++++++++++++++++++++++++
-#					+
+#		git			+
 #++++++++++++++++++++++++++++++++++++++++
 alias ga='git add .'
 alias gs='git status'
@@ -98,7 +98,7 @@ alias unlock="sudo rm /var/lib/pacman/db.lck"    # remove pacman lock
 alias cleanup='sudo pacman -Rns $(pacman -Qtdq)' # remove orphaned packages
 
 #++++++++++++++++++++++++++++++++++++++++
-#					+
+#	pacman mirror			+
 #++++++++++++++++++++++++++++++++++++++++
 # get fastest mirrors
 alias mirror="sudo reflector -f 30 -l 30 --number 10 --verbose --save /etc/pacman.d/mirrorlist"
@@ -107,9 +107,9 @@ alias mirrors="sudo reflector --latest 50 --number 20 --sort score --save /etc/p
 alias mirrora="sudo reflector --latest 50 --number 20 --sort age --save /etc/pacman.d/mirrorlist"
 
 #++++++++++++++++++++++++++++++++++++++++
-#					+
+#		ls to exa		+
 #++++++++++++++++++++++++++++++++++++++++
-# Changing "ls" to "exa"
+
 alias ls='exa -al --color=always --group-directories-first' # my preferred listing
 alias la='exa -a --color=always --group-directories-first'  # all files and dirs
 alias ll='exa -l --color=always --group-directories-first'  # long format
@@ -117,7 +117,7 @@ alias lt='exa -aT --color=always --group-directories-first' # tree listing
 alias l.='exa -a | egrep "^\."'
 
 #++++++++++++++++++++++++++++++++++++++++
-#					+
+#		grep color		+
 #++++++++++++++++++++++++++++++++++++++++
 # Colorize grep output (good for log files)
 alias grep='grep --color=auto'
@@ -125,9 +125,9 @@ alias egrep='egrep --color=auto'
 alias fgrep='fgrep --color=auto'
 
 #++++++++++++++++++++++++++++++++++++++++
-#					+
+#	   confirme cp/mv/rm		+
 #++++++++++++++++++++++++++++++++++++++++
-# confirm before overwriting something
+
 alias cp="cp -i"
 alias mv='mv -i'
 alias rm='rm -i'
