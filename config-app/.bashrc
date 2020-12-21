@@ -74,6 +74,6 @@ fi
 
 
 
-la
+ls
 pwd
 
