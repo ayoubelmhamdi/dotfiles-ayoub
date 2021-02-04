@@ -1,0 +1,83 @@
+!change my keybrowd
+! 	change z
+
+!keycode 25 =  x  b c d e f g
+! 	     "" shift N
+
+!xmodmap -e "keycode  25 = a b c d e f g h"
+
+
+!	    = ""  shift	     NoSymbol L	       altG        altG+shift 
+!keycode 10 = 1   exclam     NoSymbol NoSymbol asciitilde  ampersand
+!keycode 11 = 2   at         NoSymbol NoSymbol asciitilde  eacute
+!keycode 11 = 2   at         NoSymbol NoSymbol asciitilde  eacute
+!keycode 11 = 2   at         NoSymbol NoSymbol asciitilde  eacute
+!keycode 11 = 2   at         NoSymbol NoSymbol asciitilde  eacute
+!keycode 11 = 2   at         NoSymbol NoSymbol asciitilde  eacute
+!keycode 11 = 2   at         NoSymbol NoSymbol asciitilde  eacute
+!keycode 11 = 2   at         NoSymbol NoSymbol asciitilde  eacute
+
+
+!	    = ""shift	    NoSymbol   L altG        altG+shift 
+keycode  10 = 1 ampersand   ampersand  1 onesuperior exclamdown    onesuperior
+keycode  11 = 2 eacute      eacute     2 asciitilde  oneeighth     asciitilde
+keycode  12 = 3 quotedbl    quotedbl   3 numbersign  sterling      numbersign
+keycode  13 = 4 apostrophe  apostrophe 4 braceleft   dollar        braceleft
+keycode  14 = 5 parenleft   parenleft  5 bracketleft threeeighths  bracketleft
+keycode  15 = 6 minus       minus      6 bar         fiveeighths   bar
+keycode  16 = 7 egrave      egrave     7 grave       seveneighths  grave
+keycode  17 = 8 underscore  underscore 8 backslash   trademark     backslash
+keycode  18 = 9 ccedilla    ccedilla   9 asciicircum plusminus     asciicircum
+keycode  19 = 0 agrave      agrave     0 at          degree        at
+
+keycode  20 = degree	parenright     parenright degree bracketright questiondown bracketright
+keycode  21 = plus 	equal          equal plus braceright dead_ogonek braceright
+
+keycode  22 = BackSpace BackSpace BackSpace BackSpace
+
+
+
+
+!keycode 10 = 1		exclam 		1 exclam asciitilde dead_tilde asciitilde
+!keycode 11 = 2		quotedbl 	2 quotedbl dead_caron caron dead_caron
+!keycode 12 = 3		numbersign 	3 numbersign asciicircum dead_circumflex asciicircum
+!keycode 13 = 4		dollar 	 	4 dollar dead_breve breve dead_breve
+!keycode 14 = 5		percent		5 percent degree dead_abovering degree
+!keycode 15 = 6		ampersand	6 ampersand dead_ogonek ogonek dead_ogonek
+!keycode 16 = 7		slash 		7 slash grave dead_grave grave
+!keycode 17 = 8		parenleft 	8 parenleft dead_abovedot abovedot dead_abovedot
+!keycode 18 = 9		parenright	9 parenright dead_acute apostrophe dead_acute
+!keycode 19 = 10	equal 		0 equal dead_doubleacute doubleacute dead_doubleacute
+
+
+
+
+! shift     2 ==>@	at
+! altG      ~ ==>é	eacute
+! alG+shift ⅛ ==>~	asciitilde
+
+
+! ""        " ==> 
+! shift     3 ==>
+! altG      # ==> exclam
+! alG+shift £ ==>
+
+
+! ""         ==> ampersand
+! shift      ==>exclam
+! altG       ==>
+! alG+shift  ==>
+
+
+! ""         ==> 
+! shift      ==>
+! altG       ==>
+! alG+shift  ==>
+
+
+! ""         ==> 
+! shift      ==>
+! altG       ==>
+! alG+shift  ==>
+
+

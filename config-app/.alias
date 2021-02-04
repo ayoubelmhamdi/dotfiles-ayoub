@@ -1,0 +1,256 @@
+ #!/bin/bash
+ 
+ #----------------------------------------
+ #		alias file		+
+ #----------------------------------------
+ 
+ alias mk='f(){ clear ; sudo mkdir -p "$1"; la; }; f'
+ alias rr='f(){ clear ; sudo rm -r "$1"; la; }; f'
+ alias ddd="clear;du -ah --max-depth 1"
+ alias p="sudo chown t:t "
+ 
+ #++++++++++++++++++++++++++++++++++++++++
+ #		pacman & yay		+
+ #++++++++++++++++++++++++++++++++++++++++
+ 
+ #alias i="sudo pacman -S --noconfirm"		#
+ alias iy="sudo pacman -Sy --noconfirm"		#
+ alias iyy="sudo pacman -Syy --noconfirm"	#
+ alias iyyu='sudo pacman -Syyu'			# update only standard pkgs
+ alias yua="yay -Sua --noconfirm --noconfirm"	# update only AUR pkgs
+ alias yyu="yay -Syu --noconfirm"             	# update standard pkgs and AUR pkgs
+ 
+ alias unlock="sudo rm /var/lib/pacman/db.lck"    # remove pacman lock
+ alias cleanup='sudo pacman -Rns $(pacman -Qtdq)' # remove orphaned packages
+ 
+ 
+ #++++++++++++++++++++++++++++++++++++++++
+ #		ls			+
+ #++++++++++++++++++++++++++++++++++++++++
+ alias ls='clear;sudo ls  --color=always --group-directories-first' 
+ alias la='clear;exa -a --color=always --group-directories-first'  
+ alias ll='clear;exa -l --color=always --group-directories-first'  
+ alias lt='clear;exa -aT --color=always --group-directories-first' 
+ alias l.='clear;exa -a | egrep "^\."'
+ #++++++++++++++++++++++++++++++++++++++++
+ #		other			+
+ #++++++++++++++++++++++++++++++++++++++++
+ alias tar='tar -zxvf'
+ alias sha='shasum -a 256'
+ alias shut='sudo shutdown -h now'
+ 
+ 
+ #++++++++++++++++++++++++++++++++++++++++
+ #		git			+
+ #++++++++++++++++++++++++++++++++++++++++
+ 
+ alias gu='git add -u'
+ alias ga='git add .'
+ alias gb='git branche'
+ alias go='git checkout'
+ alias gcl='git clone'
+ alias gc='git commit -m'
+ 
+ 
+ 
+ alias gs='git status'
+ alias gl='git log'
+ alias ginit='git init'
+ alias gremote='git remote add origin'
+ 
+ 
+ #	style 2
+ alias addall='git add .'
+ alias addu='git add -u'
+ alias branch='git branch'
+ alias checkout='git checkout'
+ alias clone='git clone'
+ alias fetch='git fetch'
+ alias pull='git pull origin'
+ alias push='git push origin'
+ alias push-first='git push --set-upstream origin master'
+ alias pushb='git push --set-upstream origin master'
+ alias status='git status'
+ alias master='git branch -M master'
+ 
+ 
+ 
+ alias tag='git tag'
+ alias newtag='git tag -a'
+ 
+ # bare git repo alias for dotfiles
+ alias aliasmyconfig="/usr/bin/git --git-dir=$HOME/dotfiles --work-tree=$HOME"
+ 
+ #++++++++++++++++++++++++++++++++++++++++
+ #		cd			+
+ #++++++++++++++++++++++++++++++++++++++++
+ # navigation
+ alias ..='cd ..' 
+ alias ...='cd ../..'
+ alias .3='cd ../../..'
+ alias .4='cd ../../../..'
+ alias .5='cd ../../../../..'
+ alias p5='cd /storage/emulated/0/Download/yyy/first'
+ 
+ #++++++++++++++++++++++++++++++++++++++++
+ #	pacman mirror			+
+ #++++++++++++++++++++++++++++++++++++++++
+ 
+ # get fastest mirrors
+ alias mirror="sudo reflector -f 30 -l 30 --number 10 --verbose --save /etc/pacman.d/mirrorlist"
+ alias mirrord="sudo reflector --latest 50 --number 20 --sort delay --save /etc/pacman.d/mirrorlist"
+ alias mirrors="sudo reflector --latest 50 --number 20 --sort score --save /etc/pacman.d/mirrorlist"
+ alias mirrora="sudo reflector --latest 50 --number 20 --sort age --save /etc/pacman.d/mirrorlist"
+ #++++++++++++++++++++++++++++++++++++++++
+ #		grep color		+
+ #++++++++++++++++++++++++++++++++++++++++
+ # Colorize grep output (good for log files)
+ alias grep='grep --color=auto'
+ alias egrep='egrep --color=auto'
+ alias fgrep='fgrep --color=auto'
+ 
+ #++++++++++++++++++++++++++++++++++++++++
+ #	   confirme cp/mv/rm		+
+ #++++++++++++++++++++++++++++++++++++++++
+ 
+ alias cp="cp -ivr"
+ alias mv='mv -iv'
+ alias rm='rm -Ivr'
+ 
+ #++++++++++++++++++++++++++++++++++++++++
+ #		size files		+
+ #++++++++++++++++++++++++++++++++++++++++
+ 
+ alias df='df -h'                          # human-readable sizes
+ alias free='free -m'                      # show sizes in MB
+ 
+ #++++++++++++++++++++++++++++++++++++++++
+ #		CPU & RAM		+
+ #++++++++++++++++++++++++++++++++++++++++
+ ## get top process eating memory
+ alias psmem='ps auxf | sort -nr -k 4'
+ alias psmem10='ps auxf | sort -nr -k 4 | head -10'
+ 
+ ## get top process eating cpu ##
+ alias pscpu='ps auxf | sort -nr -k 3'
+ alias pscpu10='ps auxf | sort -nr -k 3 | head -10'
+ #++++++++++++++++++++++++++++++++++++++++
+ #		 youtube-dl		+
+ #++++++++++++++++++++++++++++++++++++++++
+ 
+ alias yt='youtube-dl --add-metadata-i'
+ alias ytv="yt -f bestvideo+bestaudio "
+ alias yta='yt -x -f bestaudio/best'
+ alias yta-aac="youtube-dl --extract-audio --audio-format aac "
+ alias yta-m4a="youtube-dl --extract-audio --audio-format m4a "
+ alias yta-mp3="youtube-dl --extract-audio --audio-format mp3 "
+ 
+ #++++++++++++++++++++++++++++++++++++++++
+ #i	 switch between shells		+
+ #++++++++++++++++++++++++++++++++++++++++
+ 
+ alias tobash="sudo chsh $USER -s /bin/bash && echo 'Now log out.'"
+ alias tozsh="sudo chsh $USER -s /bin/zsh && echo 'Now log out.'"
+ alias tofish="sudo chsh $USER -s /bin/fish && echo 'Now log out.'"
+ 
+ #++++++++++++++++++++++++++++++++++++++++
+ #	    ARCHIVE EXTRACTION		+
+ #++++++++++++++++++++++++++++++++++++++++
+ 
+ ex (){
+   if [ -f $1 ] ; then
+     case $1 in
+       *.tar.bz2)   tar xjf $1   ;;
+       *.tar.gz)    tar xzf $1   ;;
+       *.bz2)       bunzip2 $1   ;;
+       *.rar)       unrar x $1   ;;
+       *.gz)        gunzip $1    ;;
+       *.tar)       tar xf $1    ;;
+       *.tbz2)      tar xjf $1   ;;
+       *.tgz)       tar xzf $1   ;;
+       *.zip)       unzip $1     ;;
+       *.Z)         uncompress $1;;
+       *.7z)        7z x $1      ;;
+       *.deb)       ar x $1      ;;
+       *.tar.xz)    tar xf $1    ;;
+       *.tar.zst)   unzstd $1    ;;      
+       *)           echo "'$1' cannot be extracted via ex()" ;;
+     esac
+   else
+     echo "'$1' is not a valid file"
+   fi
+ }
+ 
+ 
+ 
+ alias i='sudo xbps-install -S' # install pkg
+ alias iu='sudo xbps-install -Syuv' #upgrage
+ alias svinit='init_runit_sv' #i don't now
+ 
+ alias unlock='sudo xbps-pkgdb -a'  #fix xbps
+ alias xrm='sudo xbps-remove -vR'   #remove pkg
+ alias xro='sudo xbps-remove -vROo' #remove pkg & dependance
+ 
+ alias sm='scim'
+ alias c='clear'
+ alias v='nvim '
+ alias pi='ping google.com'
+ alias void='~/start-void.sh'
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ alias gb='git branch'
+ 
+ alias goto='git checkout'
+ 
+ alias newbranch='git checkout -b'
+ 
+ 
+ alias gc='git add . && git commit -m'
+ alias commit='git add . && git commit -m'
+ 
+ alias log='git log'
+ 
+ alias remote='git remote add origin'
+ alias storage='cd /storage/sdcard0/Download/sc'
+ alias ytm="youtube-dl --extract-audio --audio-format mp3 "
+ alias f='clear && sudo xbps-query -Rs' # find pkg
+ alias xapps='xbps-query -m | sed "s/-[0-9].*//"'  # insalled app
+ alias sc='scim'
+ alias e='clear;exit;la'
+ alias flatex='tlmgr search -- global'
+ alias ilatex='tlmgr install'
+ alias topdf='latex -output-format=pdf'
+ 
+ 
+ # accepte not corect command   sort /.*\%5v/  
+ alias lq='la'
+ alias ecit='exit'
+ 
+ alias runvnc='vncserver-start'
+ alias stopvnc='vncserver-stop'
+ 
+ 
+
+ 
+ ##### dotfiles
+ alias vbashrc='v ~/.bashrc'
+ alias vzshrc='v ~/.zshrc'
+ alias valiasrc='v ~/.alias'
+ alias vvimrc='v ~/.vimrc'
+ alias vrangerc='v ~/.config/ranger/rc.conf'
+
+
+
+ #script
+ alias 720p='~/void-fs/root/scripts/my/video/720p.sh'
+ alias 480p='~/void-fs/root/scripts/my/video/480p.sh'
+ alias 144p='~/void-fs/root/scripts/my/video/144p.sh'
+
+ alias 720p-list='~/void-fs/root/scripts/my/video/720p-txt.sh'
+ alias 480p-list='~/void-fs/root/scripts/my/video/480p-txt.sh'
+ alias 144p-list='~/void-fs/root/scripts/my/video/144p-txt.sh'

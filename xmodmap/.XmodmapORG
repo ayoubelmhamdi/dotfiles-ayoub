@@ -1,0 +1,77 @@
+!change my keybrowd
+! 	change z
+
+!keycode 25 =  x  b c d e f g
+! 	     "" shift N
+
+!xmodmap -e "keycode  25 = a b c d e f g h"
+
+
+!	    = ""  shift	     NoSymbol L	       altG        altG+shift 
+
+
+!	    = o shift	    NoSymbol  L altG       altG+shift 
+!             1 &	    NoSymbol  1 ¹                 
+keycode  10 = 1 ampersand   NoSymbol  1 NoSymbol    exclam	  onesuperior
+keycode  11 = 2 eacute      NoSymbol  2 asciitilde  at            asciitilde
+keycode  12 = 3 quotedbl    NoSymbol  3 numbersign  NoSymbol      numbersign
+keycode  13 = 4 apostrophe  NoSymbol  4 braceleft   dollar        braceleft
+keycode  14 = 5 parenleft   NoSymbol  5 bracketleft percent       bracketleft
+keycode  15 = 6 minus       NoSymbol  6 bar         NoSymbol      bar
+keycode  16 = 7 egrave      NoSymbol  7 grave       ampersand     grave
+keycode  17 = 8 underscore  NoSymbol  8 backslash   asterisk      backslash
+keycode  18 = 9 ccedilla    NoSymbol  9 asciicircum parenleft     asciicircum
+keycode  19 = 0 agrave      NoSymbol  0 at          parenright        at
+
+
+!	    = o          shift	      NoSymbol   L       altG           altG+shift     XXXXXX
+keycode  20 = degree	parenright    parenright degree  bracketright   underscore      bracketright
+keycode  21 = plus 	equal         equal      plus    braceright     NoSymbol        braceright
+
+
+
+
+
+!keycode 10 = 1		exclam 		1 exclam asciitilde dead_tilde asciitilde
+!keycode 11 = 2		quotedbl 	2 quotedbl dead_caron caron dead_caron
+!keycode 12 = 3		numbersign 	3 numbersign asciicircum dead_circumflex asciicircum
+!keycode 13 = 4		dollar 	 	4 dollar dead_breve breve dead_breve
+!keycode 14 = 5		percent		5 percent degree dead_abovering degree
+!keycode 15 = 6		ampersand	6 ampersand dead_ogonek ogonek dead_ogonek
+!keycode 16 = 7		slash 		7 slash grave dead_grave grave
+!keycode 17 = 8		parenleft 	8 parenleft dead_abovedot abovedot dead_abovedot
+!keycode 18 = 9		parenright	9 parenright dead_acute apostrophe dead_acute
+!keycode 19 = 0		equal 		0 equal dead_doubleacute doubleacute dead_doubleacute
+
+
+
+
+! shift     2 ==>@	at
+! altG      ~ ==>é	eacute
+! alG+shift ⅛ ==>~	asciitilde
+
+
+! ""        " ==> 
+! shift     3 ==>
+! altG      # ==> exclam
+! alG+shift £ ==>
+
+
+! ""         ==> ampersand
+! shift      ==>exclam
+! altG       ==>
+! alG+shift  ==>
+
+
+! ""         ==> 
+! shift      ==>
+! altG       ==>
+! alG+shift  ==>
+
+
+! ""         ==> 
+! shift      ==>
+! altG       ==>
+! alG+shift  ==>
+
+
