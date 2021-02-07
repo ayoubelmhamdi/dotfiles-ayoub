@@ -13,7 +13,6 @@
  #		pacman & yay		+
  #++++++++++++++++++++++++++++++++++++++++
  
- #alias i="sudo pacman -S --noconfirm"		#
  alias iy="sudo pacman -Sy --noconfirm"		#
  alias iyy="sudo pacman -Syy --noconfirm"	#
  alias iyyu='sudo pacman -Syyu'			# update only standard pkgs
@@ -183,7 +182,10 @@
  
  
  
- alias i='sudo xbps-install -S' # install pkg
+ #alias i="sudo pacman -S --noconfirm"		#
+ #alias i='sudo xbps-install -S' # install pkg
+ alias i='sudo apt-get install' # install pkg
+
  alias iu='sudo xbps-install -Syuv' #upgrage
  alias svinit='init_runit_sv' #i don't now
  
